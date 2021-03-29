@@ -167,4 +167,4 @@ Individualized predictions are derived setting $T=0$.
 $$ f_{benefit}(lp | x, \beta) = f_{smooth}(lp | x, \beta,T=0) - f_{smooth}(lp | x, \beta, T=1) $$
 
 ## Individualized approaches
-<img src="smooth.png" width="90%" style="display: block; margin: auto;" />
+<img src="smooth.png" width="95%" style="display: block; margin: auto;" />
