@@ -2,6 +2,9 @@
 title: "Risk-based assessment of treatment effect heterogeneity"
 subtitle: "From subgroups to individuals"
 author: Alexandros Rekkas
+header-includes:
+  - \usepackage{amssymb}
+  - \usepackage{bm}
 output:
   ioslides_presentation:
     smaller: TRUE
@@ -13,11 +16,11 @@ output:
 
 
 
-<!-- <style type="text/css"> -->
-<!-- slides > slide:not(.nobackground):after { -->
-<!--   content: ''; -->
-<!-- } -->
-<!-- </style> -->
+<style type="text/css">
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+</style>
 
 <style>
 div.footnotes {
@@ -94,7 +97,7 @@ $$E\{y|x_1,\dots,x_p\} = f(lp + \gamma_0T)$$
 ***Treatment effect modeling***
 
 The expected outcome of a patient with measured predictors $x_1,\dots,x_p$ receiving treatment $T$ can be derived from a model containing predictor main effects and potential treatment interaction terms:
-$$ E\{y|x_1,\dots,x_p\} = f(\alpha + \beta_1x_1+\dots+\beta_px_p+\gamma_1Tx_1+\dots+\gamma_pTx_p) $$
+$$ E\{y|x_1,\dots,x_p\} = f(\alpha + \beta_1x_1+\dots+\beta_px_p+\gamma_0T + \gamma_1Tx_1+\dots+\gamma_pTx_p) $$
 
 
 
@@ -119,7 +122,7 @@ $$ T_{optimal} = argmax_TE\big\{ E \{ y|x_1,\dots,x_p,T(x_1,\dots,x_p) \} \big\}
 
 ## Risk-based HTE in observational data
 ***<footnote content="Rekkas, A., van Klaveren, D., Ryan, P.B., Steyerberg, E.W., Kent, D.M. and Rijnbeek, P.R., 2020. A standardized framework for risk-based assessment of treatment effect heterogeneity in observational healthcare databases. <em>arXiv preprint arXiv:2010.06430</em>.">Framework </footnote>***
-<img src="rsee_process.jpeg" width="80%" style="display: block; margin: auto;" />
+<img src="rsee_process.jpeg" width="90%" style="display: block; margin: auto;" />
 
 
 
@@ -144,3 +147,24 @@ $$ T_{optimal} = argmax_TE\big\{ E \{ y|x_1,\dots,x_p,T(x_1,\dots,x_p) \} \big\}
 ***Osteoporosis***
 
 <img src="plotAbsoluteHip.png" width="80%" style="display: block; margin: auto;" />
+
+
+
+## Individualized approaches
+
+* Stratification approach may not provide adequate prediction of benefit
+* "Jumps" at cut-offs are not realistic
+* Implement a risk-based smoothing approach
+
+
+
+
+## Individualized approaches
+Merging treatment arms, we develop prediction models including a constant relative treatment effect:
+$$E\{y| x,T\} = P(y| x, T) = f(\alpha+\beta_1x_1+\dots+\beta_px_p+\gamma_0 T)$$
+Individualized predictions are derived setting $T=0$.
+
+$$ f_{benefit}(lp | x, \beta) = f_{smooth}(lp | x, \beta,T=0) - f_{smooth}(lp | x, \beta, T=1) $$
+
+## Individualized approaches
+<img src="smooth.png" width="90%" style="display: block; margin: auto;" />
