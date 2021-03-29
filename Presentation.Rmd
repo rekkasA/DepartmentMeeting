@@ -10,6 +10,7 @@ output:
     smaller: TRUE
     keep_md: TRUE
     transition: default
+    widescreen: TRUE
   beamer_presentation: default
 ---
 
@@ -57,10 +58,6 @@ div.footnotes {
 ## Subgroup analyses
 * Generalizing overall treatment effects is often problematic
 * Subgroup analyses rarely adequately powered
-
-```{r image_grobs, fig.show = "hold", out.width = "50%", fig.align = "default"}
-knitr::include_graphics(c("Image1.jpg", "Image2.jpg"))
-``` 
 
 
 
@@ -156,7 +153,7 @@ knitr::include_graphics("plotMeta.png")
 ## Applications
 ***Osteoporosis***
 
-```{r image_osteoporosis_2, fig.show = "hold", out.width = "80%", fig.align = "center"}
+```{r image_osteoporosis_2, fig.show = "hold", out.width = "70%", fig.align = "center"}
 knitr::include_graphics("plotAbsoluteHip.png")
 ``` 
 
@@ -176,8 +173,8 @@ Merging treatment arms, we develop prediction models including a constant relati
 $$E\{y| x,T\} = P(y| x, T) = f(\alpha+\beta_1x_1+\dots+\beta_px_p+\gamma_0 T)$$
 Individualized predictions are derived setting $T=0$.
 
-$$ f_{benefit}(lp | x, \beta) = f_{smooth}(lp | x, \beta,T=0) - f_{smooth}(lp | x, \beta, T=1) $$
+$$ f_{benefit}(lp | x, \hat{\beta}) = f_{smooth}(lp | x, \hat{\beta},T=0) - f_{smooth}(lp | x, \hat{\beta}, T=1) $$
 
 ## Individualized approaches
-```{r smooth, fig.show = "hold", out.width = "95%", fig.align = "center"}
+```{r smooth, fig.show = "hold", out.width = "85%", fig.align = "center"}
 knitr::include_graphics("smooth.png")

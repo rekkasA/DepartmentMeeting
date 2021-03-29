@@ -10,6 +10,7 @@ output:
     smaller: TRUE
     keep_md: TRUE
     transition: default
+    widescreen: TRUE
   beamer_presentation: default
 ---
 
@@ -55,8 +56,6 @@ div.footnotes {
 ## Subgroup analyses
 * Generalizing overall treatment effects is often problematic
 * Subgroup analyses rarely adequately powered
-
-<img src="Image1.jpg" width="50%" /><img src="Image2.jpg" width="50%" />
 
 
 
@@ -146,7 +145,7 @@ $$ T_{optimal} = argmax_TE\big\{ E \{ y|x_1,\dots,x_p,T(x_1,\dots,x_p) \} \big\}
 ## Applications
 ***Osteoporosis***
 
-<img src="plotAbsoluteHip.png" width="80%" style="display: block; margin: auto;" />
+<img src="plotAbsoluteHip.png" width="70%" style="display: block; margin: auto;" />
 
 
 
@@ -164,7 +163,7 @@ Merging treatment arms, we develop prediction models including a constant relati
 $$E\{y| x,T\} = P(y| x, T) = f(\alpha+\beta_1x_1+\dots+\beta_px_p+\gamma_0 T)$$
 Individualized predictions are derived setting $T=0$.
 
-$$ f_{benefit}(lp | x, \beta) = f_{smooth}(lp | x, \beta,T=0) - f_{smooth}(lp | x, \beta, T=1) $$
+$$ f_{benefit}(lp | x, \hat{\beta}) = f_{smooth}(lp | x, \hat{\beta},T=0) - f_{smooth}(lp | x, \hat{\beta}, T=1) $$
 
 ## Individualized approaches
-<img src="smooth.png" width="95%" style="display: block; margin: auto;" />
+<img src="smooth.png" width="85%" style="display: block; margin: auto;" />
