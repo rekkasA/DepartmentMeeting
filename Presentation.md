@@ -129,7 +129,7 @@ $$ T_{optimal} = argmax_TE\big\{ E \{ y|x_1,\dots,x_p,T(x_1,\dots,x_p) \} \big\}
 ## Applications
 ***Hypertension***
 
-<img src="Picture5.png" width="50%" /><img src="Picture6.png" width="50%" />
+<img src="Picture5.png" width="49%" /><img src="Picture6.png" width="49%" />
 
 
 

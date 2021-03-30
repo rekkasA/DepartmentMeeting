@@ -133,7 +133,7 @@ knitr::include_graphics("rsee_process.jpeg")
 ## Applications
 ***Hypertension***
 
-```{r image_htn, fig.show = "hold", out.width = "50%", fig.align = "default"}
+```{r image_htn, fig.show = "hold", out.width = "49%", fig.align = "default"}
 knitr::include_graphics(c("Picture5.png", "Picture6.png"))
 ``` 
 
